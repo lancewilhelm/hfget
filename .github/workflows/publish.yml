@@ -1,0 +1,45 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify tag matches package version
+        run: |
+          TAG="${GITHUB_REF##*/}"    # e.g. v0.0.3
+          VERSION="${TAG#v}"         # strip the v → 0.0.3
+          PKG_VERSION=$(node -p "require('./package.json').version")
+
+          echo "Tag version: $VERSION"
+          echo "package.json version: $PKG_VERSION"
+
+          if [ "$PKG_VERSION" != "$VERSION" ]; then
+            echo "❌ Version mismatch: package.json=$PKG_VERSION tag=$VERSION"
+            exit 1
+          fi
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public

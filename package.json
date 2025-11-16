@@ -1,6 +1,6 @@
 {
   "name": "hfget",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CLI tool for downloading models from HuggingFace with an interactive interface",
   "type": "module",
   "author": "Lance Wilhelm <lance.wilhelm@example.com>",

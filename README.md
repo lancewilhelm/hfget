@@ -2,7 +2,13 @@
 
 A CLI tool for downloading models from HuggingFace with an interactive interface.
 
+<img src="assets/screenshot.png" alt="CLI Screenshot" style="max-width: 500px; height: auto;">
+
 ## Installation
+
+Only tested on linux/macos. Can't speak for windows.
+
+As this is a typescript project, for now I only have it on npm. However, if there is enough interest I can start deploying for other package managers (e.g., pacman (aur), brew, etc.).
 
 ```bash
 npm install -g hfget

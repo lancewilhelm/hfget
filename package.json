@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A CLI tool for downloading models from HuggingFace with an interactive interface",
   "type": "module",
-  "author": "Lance Wilhelm <lance.wilhelm@gmail.com>",
+  "author": "Lance Wilhelm <lance.wilhelm@example.com>",
   "license": "MIT",
   "repository": {
     "type": "git",

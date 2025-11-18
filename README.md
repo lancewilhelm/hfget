@@ -1,8 +1,8 @@
 # hfget
 
-A CLI tool for downloading models from HuggingFace with an interactive interface.
+A CLI tool for downloading models from HuggingFace with an interactive interface. `hfget` is an interactive, lms-style model browser for the Hugging Face Hub, focused purely on searching repos, comparing quantizations, and downloading the exact model files you want.
 
-<img src="assets/screenshot.png" alt="CLI Screenshot" style="max-width: 500px; height: auto;">
+<img src="assets/screenshot.png" alt="CLI Screenshot" style="max-width: 400px; height: auto;">
 
 ## Installation
 
